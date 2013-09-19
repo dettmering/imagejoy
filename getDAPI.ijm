@@ -10,7 +10,9 @@ Dialog.create("Set information");
 Dialog.show();
 
 slide_no = Dialog.getString();
-prefix= "DAPI_";
+prefix_DAPI= "DAPI_";
+prefix_FITC= "FITC_";
+prefix_PI= "PI_";
 suffix = ".tif";
 
 if (nImages==0)
@@ -19,11 +21,7 @@ else {
 	setBatchMode(true);
 	for (i=1; i<=nImages; i++) {
 		selectImage(i);
-		run("Delete Slice");
-		run("Delete Slice");
-		run("Delete Slice");
-		save(savepath+slide_no+"_"+prefix+i+suffix);
-		print("Image saved as: "); print(savepath+slide_no+"_"+prefix+i+suffix);
+		saveAs("Tiff", savepath + slide_no + "_" + "_ch1.tif");
 	}
 run("Close All");
 call("java.lang.System.gc");
