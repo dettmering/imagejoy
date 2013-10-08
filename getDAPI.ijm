@@ -21,7 +21,7 @@ else {
 	setBatchMode(true);
 	for (i=1; i<=nImages; i++) {
 		selectImage(i);
-		saveAs("Tiff", savepath + slide_no + "_" + "_ch1.tif");
+		saveAs("Tiff", savepath + slide_no + "_" + i + "_ch1.tif");
 	}
 run("Close All");
 call("java.lang.System.gc");
