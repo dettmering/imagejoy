@@ -4,7 +4,7 @@ savepath = getDirectory("Select a target Directory");
 print("Chosen Directory: "); print(savepath); print("");
 print("Number of open Images: " + nImages);
 
-slide = split(getTitle(), "_");
+slide = split(getTitle(), ".");
 
 Dialog.create("Set information");
 	Dialog.addMessage("Slide designation:");
